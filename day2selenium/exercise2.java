@@ -84,14 +84,14 @@ public class exercise2 {
             WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofMillis(1000));
             wait1.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id^='react-select-3-option'")));
             WebElement suggestions1 = driver.findElement(By.xpath("//div[@id='react-select-3-option-2']"));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();",suggestions1);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", suggestions1);
 
             WebElement city = driver.findElement(By.id("react-select-4-input"));
             city.sendKeys("Panipat");
             WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait2.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id^='react-select-4-option'")));
             WebElement suggestions2 = driver.findElement(By.xpath("//div[@id='react-select-4-option-1']"));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();",suggestions2);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", suggestions2);
 
             //SUBMIT BUTTON
             driver.findElement(By.id("submit")).sendKeys(Keys.ENTER);
