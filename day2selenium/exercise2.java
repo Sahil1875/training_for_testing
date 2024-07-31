@@ -34,10 +34,8 @@ public class exercise2 {
             WebElement dateElement = driver.findElement(By.id("dateOfBirthInput"));
             dateElement.click();
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
             // Select year
-            WebElement yearDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("react-datepicker__year-select")));
+            WebElement yearDropdown = driver.findElement(By.className("react-datepicker__year-select"));
             Select selectYear = new Select(yearDropdown);
             selectYear.selectByVisibleText("2002");
 
@@ -47,7 +45,7 @@ public class exercise2 {
             selectMonth.selectByVisibleText("November");
 
             // Select day
-            WebElement day = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'react-datepicker__day--016') and not(contains(@class, 'react-datepicker__day--outside-month'))]")));
+            WebElement day = driver.findElement(By.className("react-datepicker__day--016"));
             day.click();
 
             //SUBJECTS
